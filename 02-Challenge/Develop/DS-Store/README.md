@@ -14,10 +14,8 @@ N/A
 * [Contact-Me](#contact-me)
 * [Features](#features)
 * [Dependencies]( dependencies)
-* [How to Use This Application](#How to Use This Application)
 * [Contributors](#contributors)
 * [Testing](#testing)
-undefined
 ## Description
 Every developer knows how important it is to have a Professional README.This project is to show what professional README needs to look alike.
 ## Requirements
