@@ -31,18 +31,15 @@ const questions = [
         type: "checkbox",
         name: "license",
         message: "Please select a license applicable to this project.",
-        choices: ["MIT", "APACHE2.0", "Boost1.0", "MPL2.0", "BSD2", "BSD3", "none"],
+        choices: ["None","MIT", "APACHE2.0"],
       },
       {
         type: "input",
         name: "require",
         message: "List any project dependencies here.",
       },
-      {
-        type: "input",
-        name: "features",
-        message: "List some cool features about this project here.",
-      },
+      
+      
       {
         type: "input",
         name: "usage",
@@ -89,7 +86,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((responses) => {
       console.log("Creating Professional README.md File...");
-      writeToFile("./ds/README.md", generateMarkdown({ ...responses }));
+      writeToFile("./DS-Store/README.md", generateMarkdown({ ...responses }));
     });
   }
   

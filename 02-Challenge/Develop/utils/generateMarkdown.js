@@ -50,7 +50,6 @@ ${data.link}
 * [Contact-Me](#contact-me)
 * [Features](#features)
 * [Dependencies]( dependencies)
-* [How to Use This Application](#How to Use This Application)
 * [Contributors](#contributors)
 * [Testing](#testing)
 ${renderLicenseLink(data.license)}
