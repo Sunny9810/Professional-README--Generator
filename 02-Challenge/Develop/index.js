@@ -1,27 +1,21 @@
 // TODO: Include packages needed for this application
-const fs  = require ('fs');
-const inquirer= require ('inquirer');
-const path= require('path');
-const generateMarkdown= require("utils/generateMarkdown");
+const fs = require("fs");
+const inquirer = require("inquirer");
+const path = require("path");
+const generateMarkdown = require("./utils/generateMarkdown");
 
 
 // TODO: Create an array of questions for user input
 const questions = [
     {
-        type: 'input',
-        message: 'Please name your project',
-        name: 'title',
+        type: "input",
+        name: "title",
+        message: "Please name your Project.",
       },
       {
-        type: 'input',
-        message: 'Please give short description of your project',
-        name: 'Description',
-      },
-      {
-        type: 'checkbox',
-        message: 'License',
-        name: 'Please choose the license for your application',
-        choices: ["Apache License 2.0", "GNU GPLv3", "MIT", "ISC","none"]
+        type: "input",
+        name: "description",
+        message: "Please describe the purpose and functionality of this project.",
       },
       {
         type: "input",
@@ -34,18 +28,57 @@ const questions = [
         message: "Please provide a URL where a user can access your deployed application."
       },
       {
+        type: "checkbox",
+        name: "license",
+        message: "Please select a license applicable to this project.",
+        choices: ["MIT", "APACHE2.0", "Boost1.0", "MPL2.0", "BSD2", "BSD3", "none"],
+      },
+      {
+        type: "input",
+        name: "require",
+        message: "List any project dependencies here.",
+      },
+      {
+        type: "input",
+        name: "features",
+        message: "List some cool features about this project here.",
+      },
+      {
         type: "input",
         name: "usage",
         message:
-          "State  technologies associated with this project.",
+          "State the languages or technologies associated with this project.",
       },
-      { type: "input",
+      {
+        type: "input",
+        name: "creator",
+        message: "Write your GitHub username.",
+      },
+      {
+        type: "input",
+        name: "name",
+        message: "State your full name.",
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "Provide a valid email address.",
+      },
+      {
+        type: "input",
+        name: "contributors",
+        message: "Please list any contributors. (Use GitHub usernames)",
+        default: "",
+      },
+      {
+        type: "input",
         name: "test",
         message: "Provide walkthrough of required tests if applicable.",
-          },
+      },
+    ];
       
 
-    ]
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -56,7 +89,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions).then((responses) => {
       console.log("Creating Professional README.md File...");
-      writeToFile("./dist/README.md", generateMarkdown({ ...responses }));
+      writeToFile("./ds/README.md", generateMarkdown({ ...responses }));
     });
   }
   
